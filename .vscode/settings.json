@@ -1,0 +1,8 @@
+{
+    "cmake.configureOnOpen": false,
+    "xd.globalEditor": false,
+    "cmake.sourceDirectory": "${workspaceFolder}/linux",
+    "dart.previewFlutterUiGuides": true,
+    "dart.previewFlutterUiGuidesCustomTracking": true,
+    "java.configuration.updateBuildConfiguration": "interactive"
+}
