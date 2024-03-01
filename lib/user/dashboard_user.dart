@@ -17,7 +17,7 @@ class dashboard_user extends StatefulWidget {
 
 class _dashboard_userState extends State<dashboard_user> {
   TextEditingController Id_Class = TextEditingController();
-//----------------------------------เรียก User มาแสดง-------------------------------------//
+//--------------------------------------เรียก User มาแสดง---------------------------------------//
   String Name = "";
   String Email = "";
   Future getEmail() async {
@@ -29,8 +29,8 @@ class _dashboard_userState extends State<dashboard_user> {
     });
   }
 
-//--------------------------------------------------------------------------------------//
-//-------------------------ฟังก์ชัน join classroom-----------------------------------------//
+//---------------------------------------------------------------------------------------------//
+//--------------------------------ฟังก์ชัน join classroom-----------------------------------------//
   Future joinclass_user() async {
     var url = 'http://172.20.10.2/games/joinclass_user.php';
     var response = await http.post(url, body: {
@@ -98,18 +98,16 @@ class _dashboard_userState extends State<dashboard_user> {
                   height: 100,
                 ),
 //--------------------------------------------------------------------------------------//
-                Name == ''
-                    ? Text('')
-                    : Text(
-                        (Name),
-                        style: TextStyle(
-                          fontFamily: 'Ambit',
-                          fontSize: 42,
-                          color: Color(0xff778bd9),
-                          fontWeight: FontWeight.w700,
-                          height: 0.47619047619047616,
-                        ),
-                      ),
+                Text(
+                  ('User'),
+                  style: TextStyle(
+                    fontFamily: 'Ambit',
+                    fontSize: 42,
+                    color: Color(0xff778bd9),
+                    fontWeight: FontWeight.w700,
+                    height: 0.47619047619047616,
+                  ),
+                ),
 //--------------------------------------------------------------------------------------//
                 SizedBox(
                   height: 25,

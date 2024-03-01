@@ -1,7 +1,9 @@
 // import 'dart:ffi';
 import 'package:flutter/material.dart';
+import 'package:games/admin/edit_profile_admin%20.dart';
 import 'package:games/admin/login_admin.dart';
 import 'package:games/admin/proflie_adapter_admin.dart';
+
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -95,25 +97,23 @@ class _profile_adminState extends State<profile_admin> {
 //--------------------------------------------------------------------------------------------------//
                   Row(
                     children: [
-                      Name == ''
-                          ? Text('')
-                          : Text(
-                              (Name),
-                              style: TextStyle(
-                                fontFamily: 'Ambit',
-                                fontSize: 42,
-                                color: Color(0xff778bd9),
-                                fontWeight: FontWeight.w700,
-                                height: 0.47619047619047616,
-                              ),
-                            ),
+                      Text(
+                        ('Admin'),
+                        style: TextStyle(
+                          fontFamily: 'Ambit',
+                          fontSize: 42,
+                          color: Color(0xff778bd9),
+                          fontWeight: FontWeight.w700,
+                          height: 0.47619047619047616,
+                        ),
+                      ),
                       GestureDetector(
                         onTap: () {
                           logout(context);
                         },
                         child: Container(
                           child: Padding(
-                            padding: const EdgeInsets.fromLTRB(220, 0, 0, 0),
+                            padding: const EdgeInsets.fromLTRB(170, 0, 0, 0),
                             child: Image.asset(
                               'assets/img/logout.png',
                               width: 30,
@@ -124,10 +124,7 @@ class _profile_adminState extends State<profile_admin> {
                       ),
                     ],
                   ),
-//--------------------------------------------------------------------------------------------------//
-                  SizedBox(
-                    height: 22,
-                  ),
+
 //--------------------------------------------------------------------------------------------------//
                   Padding(
                     padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
@@ -165,20 +162,22 @@ class _profile_adminState extends State<profile_admin> {
 //--------------------------------------------------------------------------------------------------//
                                         // ignore: prefer_const_constructors
                                         Center(
-                                          child: Text(
-                                            'Username',
-                                            style: TextStyle(
-                                              color: Color.fromRGBO(
-                                                  247, 247, 247, 1),
-                                              fontWeight: FontWeight.bold,
-                                              fontFamily: 'Roboto',
-                                              fontSize: 20,
-                                            ),
-                                          ),
+                                          child: Name == ''
+                                              ? Text('')
+                                              : Text(
+                                                  (Name),
+                                                  style: TextStyle(
+                                                    color: Color.fromRGBO(
+                                                        247, 247, 247, 1),
+                                                    fontWeight: FontWeight.bold,
+                                                    fontFamily: 'Roboto',
+                                                    fontSize: 25,
+                                                  ),
+                                                ),
                                         ),
 //--------------------------------------------------------------------------------------------------//
                                         SizedBox(
-                                          height: 5,
+                                          height: 20,
                                         ),
 //--------------------------------------------------------------------------------------------------//
                                         Row(
@@ -192,23 +191,6 @@ class _profile_adminState extends State<profile_admin> {
                                                 Padding(
                                                   padding:
                                                       const EdgeInsets.fromLTRB(
-                                                          0, 10, 10, 5),
-                                                  child: Text(
-                                                    'Teacher  ID',
-                                                    style: TextStyle(
-                                                      color: Color.fromARGB(
-                                                          255, 255, 255, 255),
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontFamily: 'Roboto',
-                                                      fontSize: 16,
-                                                    ),
-                                                  ),
-                                                ),
-//--------------------------------------------------------------------------------------------------//
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.fromLTRB(
                                                           0, 0, 0, 5),
                                                   child: Text(
                                                     'xxxxxxxxxxxxx',
@@ -218,72 +200,13 @@ class _profile_adminState extends State<profile_admin> {
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       fontFamily: 'Roboto',
-                                                      fontSize: 15,
+                                                      fontSize: 20,
                                                     ),
                                                   ),
                                                 ),
                                               ],
                                             ),
 //--------------------------------------------------------------------------------------------------//
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                horizontal: 25,
-                                                vertical: 8,
-                                              ),
-                                              child: Container(
-                                                height: 50,
-                                                width: 3,
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          100),
-                                                  color: Color.fromARGB(
-                                                      255, 255, 255, 255),
-                                                ),
-                                              ),
-                                            ),
-//--------------------------------------------------------------------------------------------------//
-                                            Column(
-                                              // ignore: prefer_const_literals_to_create_immutables
-                                              children: [
-//--------------------------------------------------------------------------------------------------//
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.fromLTRB(
-                                                          0, 10, 10, 5),
-                                                  child: Text(
-                                                    'Sec',
-                                                    style: TextStyle(
-                                                      color: Color.fromARGB(
-                                                          255, 255, 255, 255),
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontFamily: 'Roboto',
-                                                      fontSize: 16,
-                                                    ),
-                                                  ),
-                                                ),
-//--------------------------------------------------------------------------------------------------//
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.fromLTRB(
-                                                          0, 0, 0, 5),
-                                                  child: Text(
-                                                    'xx',
-                                                    style: TextStyle(
-                                                      color: Color.fromRGBO(
-                                                          255, 255, 255, 1),
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontFamily: 'Roboto',
-                                                      fontSize: 15,
-                                                    ),
-                                                  ),
-                                                ),
-//--------------------------------------------------------------------------------------------------//
-                                              ],
-                                            ),
                                           ],
                                         )
                                       ],
@@ -294,23 +217,20 @@ class _profile_adminState extends State<profile_admin> {
                               Positioned(
                                 top: 110,
                                 right: 20,
-                                child: Icon(
-                                  AntDesign.setting,
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                  size: 30,
-                                ),
-                              ),
-                              Positioned(
-                                top: 0,
-                                left: 0,
-                                right: 0,
-                                child: Center(
-                                  child: Container(
-                                    child: Image.asset(
-                                      'assets/img/profile.png',
-                                      width: innerWidth * 0.35,
-                                      fit: BoxFit.fitWidth,
-                                    ),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const edit_profile_admin(),
+                                      ),
+                                    );
+                                  },
+                                  child: Icon(
+                                    AntDesign.setting,
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    size: 30,
                                   ),
                                 ),
                               ),
@@ -328,7 +248,9 @@ class _profile_adminState extends State<profile_admin> {
                       itemBuilder: (context, index) {
                         String classname =
                             classroom[index]['Name_Class'].toString();
-                        return proflie_adapter_admin(child: classname);
+                        String Sec = classroom[index]['Sec'].toString();
+                        return proflie_adapter_admin(
+                            child: classname, Sec: Sec);
                       },
                     ),
                   ),

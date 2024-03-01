@@ -70,18 +70,16 @@ class _scoreboard_adminState extends State<scoreboard_admin> {
                 height: 100,
               ),
 //--------------------------------------------------------------------------------------------------------------//
-              Name == ''
-                  ? Text('')
-                  : Text(
-                      (Name),
-                      style: TextStyle(
-                        fontFamily: 'Ambit',
-                        fontSize: 42,
-                        color: Color(0xff778bd9),
-                        fontWeight: FontWeight.w700,
-                        height: 0.47619047619047616,
-                      ),
-                    ),
+              Text(
+                ('Admin'),
+                style: TextStyle(
+                  fontFamily: 'Ambit',
+                  fontSize: 42,
+                  color: Color(0xff778bd9),
+                  fontWeight: FontWeight.w700,
+                  height: 0.47619047619047616,
+                ),
+              ),
 //--------------------------------------------------------------------------------------------------------------//
               SizedBox(
                 height: 25,

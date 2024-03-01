@@ -141,7 +141,7 @@ class _edit_quizState extends State<edit_quiz> {
   //---------------------------------Create Question-------------------------------------------------//
   Future EditQuest() async {
     print(getquest.toString());
-    // var url = 'http://172.20.10.2/games/create_question.php';
+    // var url = 'http://172.20.10.19/games/create_question.php';
     // var response = await http.post(url, body: {
     //   "Questions_text": quest.text.toString(),
     //   "Score": score.text.toString(),
@@ -194,18 +194,16 @@ class _edit_quizState extends State<edit_quiz> {
               height: 100,
             ),
 //---------------------------text header Admin------------------------------------//
-            Name == ''
-                ? Text('')
-                : Text(
-                    (Name),
-                    style: TextStyle(
-                      fontFamily: 'Ambit',
-                      fontSize: 42,
-                      color: Color(0xff778bd9),
-                      fontWeight: FontWeight.w700,
-                      height: 0.47619047619047616,
-                    ),
-                  ),
+            Text(
+              ('Admin'),
+              style: TextStyle(
+                fontFamily: 'Ambit',
+                fontSize: 42,
+                color: Color(0xff778bd9),
+                fontWeight: FontWeight.w700,
+                height: 0.47619047619047616,
+              ),
+            ),
 //--------------------------------------------------------------------------------//
             SizedBox(
               height: 25,
@@ -366,7 +364,7 @@ class _edit_quizState extends State<edit_quiz> {
                         padding: const EdgeInsets.fromLTRB(125, 10, 0, 0),
                         child: Container(
                           child: FlutterSwitch(
-                            activeColor: Color.fromARGB(255, 133, 151, 225),
+                            activeColor: Color.fromARGB(255, 116, 255, 148),
                             inactiveColor: const Color(0xffd97787),
                             width: 50.5,
                             height: 27.5,
@@ -454,7 +452,7 @@ class _edit_quizState extends State<edit_quiz> {
                         padding: const EdgeInsets.fromLTRB(68, 15, 0, 0),
                         child: Container(
                           child: FlutterSwitch(
-                            activeColor: Color.fromARGB(255, 133, 151, 225),
+                            activeColor: Color.fromARGB(255, 116, 255, 148),
                             inactiveColor: const Color(0xffd97787),
                             width: 50.5,
                             height: 27.5,
@@ -532,7 +530,7 @@ class _edit_quizState extends State<edit_quiz> {
                         padding: const EdgeInsets.fromLTRB(125, 10, 0, 0),
                         child: Container(
                           child: FlutterSwitch(
-                            activeColor: Color.fromARGB(255, 133, 151, 225),
+                            activeColor: Color.fromARGB(255, 116, 255, 148),
                             inactiveColor: const Color(0xffd97787),
                             width: 50.5,
                             height: 27.5,
@@ -620,7 +618,7 @@ class _edit_quizState extends State<edit_quiz> {
                         padding: const EdgeInsets.fromLTRB(68, 15, 0, 0),
                         child: Container(
                           child: FlutterSwitch(
-                            activeColor: Color.fromARGB(255, 133, 151, 225),
+                            activeColor: Color.fromARGB(255, 116, 255, 148),
                             inactiveColor: const Color(0xffd97787),
                             width: 50.5,
                             height: 27.5,
@@ -698,7 +696,7 @@ class _edit_quizState extends State<edit_quiz> {
                         padding: const EdgeInsets.fromLTRB(125, 10, 0, 0),
                         child: Container(
                           child: FlutterSwitch(
-                            activeColor: Color.fromARGB(255, 133, 151, 225),
+                            activeColor: Color.fromARGB(255, 116, 255, 148),
                             inactiveColor: const Color(0xffd97787),
                             width: 50.5,
                             height: 27.5,
@@ -787,7 +785,7 @@ class _edit_quizState extends State<edit_quiz> {
                         padding: const EdgeInsets.fromLTRB(68, 15, 0, 0),
                         child: Container(
                           child: FlutterSwitch(
-                            activeColor: Color.fromARGB(255, 133, 151, 225),
+                            activeColor: Color.fromARGB(255, 116, 255, 148),
                             inactiveColor: const Color(0xffd97787),
                             width: 50.5,
                             height: 27.5,
@@ -865,7 +863,7 @@ class _edit_quizState extends State<edit_quiz> {
                         padding: const EdgeInsets.fromLTRB(125, 10, 0, 0),
                         child: Container(
                           child: FlutterSwitch(
-                            activeColor: Color.fromARGB(255, 133, 151, 225),
+                            activeColor: Color.fromARGB(255, 116, 255, 148),
                             inactiveColor: const Color(0xffd97787),
                             width: 50.5,
                             height: 27.5,
@@ -953,7 +951,7 @@ class _edit_quizState extends State<edit_quiz> {
                         padding: const EdgeInsets.fromLTRB(68, 15, 0, 0),
                         child: Container(
                           child: FlutterSwitch(
-                            activeColor: Color.fromARGB(255, 133, 151, 225),
+                            activeColor: Color.fromARGB(255, 116, 255, 148),
                             inactiveColor: const Color(0xffd97787),
                             width: 50.5,
                             height: 27.5,

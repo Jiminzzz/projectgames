@@ -65,18 +65,16 @@ class _alledit_quizState extends State<alledit_quiz> {
           children: [
             Padding(
               padding: const EdgeInsets.fromLTRB(30, 130, 0, 0),
-              child: Name == ''
-                  ? Text('')
-                  : Text(
-                      (Name),
-                      style: TextStyle(
-                        fontFamily: 'Ambit',
-                        fontSize: 42,
-                        color: Color(0xff778bd9),
-                        fontWeight: FontWeight.w700,
-                        height: 0.47619047619047616,
-                      ),
-                    ),
+              child: Text(
+                ('Admin'),
+                style: TextStyle(
+                  fontFamily: 'Ambit',
+                  fontSize: 42,
+                  color: Color(0xff778bd9),
+                  fontWeight: FontWeight.w700,
+                  height: 0.47619047619047616,
+                ),
+              ),
             ),
 //-------------------------------------------------------------------------------------//
             SizedBox(

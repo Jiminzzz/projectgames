@@ -5,7 +5,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 class listview_adapter_admin extends StatelessWidget {
   final String child;
   final String idclass;
-  const listview_adapter_admin({required this.child, required this.idclass});
+  final String Sec;
+  const listview_adapter_admin(
+      {required this.child, required this.idclass, required this.Sec});
 
   @override
   Widget build(BuildContext context) {
@@ -40,19 +42,48 @@ class listview_adapter_admin extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Padding(
-                padding: EdgeInsets.all(50),
-                child: Text(
-                  child,
-                  style: TextStyle(
-                    fontFamily: 'Roboto',
-                    fontSize: 20,
-                    color: Color.fromARGB(255, 246, 246, 246),
-                    fontWeight: FontWeight.w700,
-                    height: 0.5666666666666667,
+//--------------------------------------------------------------------------------///
+              Row(
+                children: [
+                  Container(
+                    // margin: const EdgeInsets.all(10),
+                    // height: 50,
+                    width: 250,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(50, 55, 0, 0),
+                      child: Text(
+                        child,
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          fontSize: 20,
+                          color: Color.fromARGB(255, 246, 246, 246),
+                          fontWeight: FontWeight.w700,
+                          height: 0.5666666666666667,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
+//--------------------------------------------------------------------------------///
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 55, 0, 0),
+                        child: Text(
+                          Sec,
+                          style: TextStyle(
+                            fontFamily: 'Roboto',
+                            fontSize: 20,
+                            color: Color.fromARGB(255, 246, 246, 246),
+                            fontWeight: FontWeight.w700,
+                            height: 0.5666666666666667,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
+//--------------------------------------------------------------------------------///
             ],
           ),
         ),

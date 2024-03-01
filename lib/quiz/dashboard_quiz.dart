@@ -55,18 +55,16 @@ class _dashboard_quizState extends State<dashboard_quiz> {
                 height: 100,
               ),
 //-------------------------------text headder admin-------------------------------//
-              Name == ''
-                  ? Text('')
-                  : Text(
-                      (Name),
-                      style: TextStyle(
-                        fontFamily: 'Ambit',
-                        fontSize: 42,
-                        color: Color(0xff778bd9),
-                        fontWeight: FontWeight.w700,
-                        height: 0.47619047619047616,
-                      ),
-                    ),
+              Text(
+                ('Admin'),
+                style: TextStyle(
+                  fontFamily: 'Ambit',
+                  fontSize: 42,
+                  color: Color(0xff778bd9),
+                  fontWeight: FontWeight.w700,
+                  height: 0.47619047619047616,
+                ),
+              ),
 //--------------------------------------------------------------------------------//
               SizedBox(
                 height: 25,
@@ -161,7 +159,7 @@ class _dashboard_quizState extends State<dashboard_quiz> {
                     ),
                   );
                 },
-//-------------------------text เชื่อมไปหน้าแก่ไขคำถาม-------------------------------//
+//-------------------------text เชื่อมไปหน้าแก้ไขคำถาม-------------------------------//
                 child: Container(
                   height: 120,
                   decoration: BoxDecoration(

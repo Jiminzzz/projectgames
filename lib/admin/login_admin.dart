@@ -3,7 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'dart:convert';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:games/admin/GoogleSignInApi.dart';
+// import 'package:games/admin/GoogleSignInApi.dart';
 import 'package:games/admin/register_admin.dart';
 import 'package:games/admin/tabbar_admin.dart';
 import 'package:games/user/login_user.dart';
@@ -62,10 +62,9 @@ class _login_adminState extends State<login_admin> {
   }
 
 //-----------------------------------------------------------------------------------//
-  Future signingoogle() async {
-    await GoogleSignInApi.login();
-  }
-
+  // Future signingoogle() async {
+  //   await GoogleSignInApi.login();
+  // }
 //-----------------------------------------------------------------------------------//
   @override
   Widget build(BuildContext context) {
@@ -250,7 +249,7 @@ class _login_adminState extends State<login_admin> {
                 ),
                 child: GestureDetector(
                   onTap: () {
-                    signingoogle();
+                    // signingoogle();
                   },
                   child: Center(
                     child: const Text(

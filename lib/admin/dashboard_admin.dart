@@ -18,6 +18,7 @@ class dashboard_admin extends StatefulWidget {
 class _dashboard_adminState extends State<dashboard_admin> {
   TextEditingController Id_Class = TextEditingController();
   TextEditingController Name_Class = TextEditingController();
+  TextEditingController Sec = TextEditingController();
 
 //----------------------------------- เรียก Admin ปัจจุบัน--------------------------------//
   String Email = "";
@@ -52,24 +53,37 @@ class _dashboard_adminState extends State<dashboard_admin> {
 //----------------------------ฟังชั้นก์สร้าง classroom--------------------------------------//
   Future createclass_admin() async {
     var url = 'http://172.20.10.2/games/createclass_admin.php';
-    var response = await http.post(url, body: {
-      "Email": Email.toString(),
-      "Id_Class": Id_Class.text.toString(),
-      "Name_Class": Name_Class.text.toString(),
-    });
-    var data = json.decode(response.body);
-    if (data == "Error") {
+    if (Id_Class.text.toString() != "" &&
+        Name_Class.text.toString() != "" &&
+        Sec.text.toString() != "") {
+      var response = await http.post(url, body: {
+        "Email": Email.toString(),
+        "Id_Class": Id_Class.text.toString(),
+        "Name_Class": Name_Class.text.toString(),
+        "Sec": Sec.text.toString(),
+      });
+      print(json.decode(response.body));
+      var data = json.decode(response.body);
+      if (data.toString() == "Error") {
+        Fluttertoast.showToast(
+          backgroundColor: Colors.orange,
+          textColor: Colors.white,
+          msg: 'Build failed, something has problem occurred.!',
+          toastLength: Toast.LENGTH_SHORT,
+        );
+      } else {
+        Fluttertoast.showToast(
+          backgroundColor: Colors.green,
+          textColor: Colors.white,
+          msg: 'Create classroom Successful',
+          toastLength: Toast.LENGTH_SHORT,
+        );
+      }
+    } else {
       Fluttertoast.showToast(
         backgroundColor: Colors.orange,
         textColor: Colors.white,
         msg: 'Build failed, something has problem occurred.!',
-        toastLength: Toast.LENGTH_SHORT,
-      );
-    } else {
-      Fluttertoast.showToast(
-        backgroundColor: Colors.green,
-        textColor: Colors.white,
-        msg: 'Create classroom Successful',
         toastLength: Toast.LENGTH_SHORT,
       );
     }
@@ -102,17 +116,15 @@ class _dashboard_adminState extends State<dashboard_admin> {
               //------------------------------เรียก Admin ปัจุบันมาแสดง------------------------------//
               Padding(
                 padding: EdgeInsets.all(0),
-                child: Name == ''
-                    ? Text('')
-                    : Text(
-                        (Name),
-                        style: TextStyle(
-                          fontSize: 42,
-                          color: Color(0xff778bd9),
-                          fontWeight: FontWeight.w700,
-                          height: 0.47619047619047616,
-                        ),
-                      ),
+                child: Text(
+                  ('Admin'),
+                  style: TextStyle(
+                    fontSize: 42,
+                    color: Color(0xff778bd9),
+                    fontWeight: FontWeight.w700,
+                    height: 0.47619047619047616,
+                  ),
+                ),
               ),
               //--------------------------------------------------------------------------------//
               SizedBox(
@@ -134,7 +146,7 @@ class _dashboard_adminState extends State<dashboard_admin> {
               ),
               //--------------------------------------------------------------------------------///
               Container(
-                height: 280,
+                height: 340,
                 decoration: BoxDecoration(
                   color: const Color(0xff5a81ba),
                   borderRadius: BorderRadius.circular(32.0),
@@ -244,6 +256,35 @@ class _dashboard_adminState extends State<dashboard_admin> {
                       ),
                     ),
                     //--------------------------------------------------------------------------------///
+                    //--------------------------------------------------------------------------------///
+                    Padding(
+                      padding: EdgeInsetsDirectional.all(10),
+                      child: TextField(
+                        controller: Sec,
+                        style: const TextStyle(
+                            color: Color.fromARGB(255, 0, 0, 0)),
+                        decoration: InputDecoration(
+                          hintText: 'Sec',
+                          hintStyle: const TextStyle(
+                            fontSize: 16,
+                            color: Color(0x80414c79),
+                            fontWeight: FontWeight.bold,
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(26),
+                            borderSide: const BorderSide(
+                              width: 1,
+                              style: BorderStyle.none,
+                            ),
+                          ),
+                          filled: true,
+                          fillColor: Color.fromARGB(255, 255, 255, 255),
+                          contentPadding: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 10),
+                        ),
+                      ),
+                    ),
+                    //--------------------------------------------------------------------------------///
                     const SizedBox(
                       height: 0,
                     ),
@@ -294,8 +335,9 @@ class _dashboard_adminState extends State<dashboard_admin> {
                     String classname =
                         classroom[index]['Name_Class'].toString();
                     String id_class = classroom[index]['Id_Class'].toString();
+                    String Sec = classroom[index]['Sec'].toString();
                     return listview_adapter_admin(
-                        child: classname, idclass: id_class);
+                        child: classname, idclass: id_class, Sec: Sec);
                   },
                 ),
               ),
